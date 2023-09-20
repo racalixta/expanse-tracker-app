@@ -2,6 +2,7 @@ import React from 'react'
 import { TemplateContainer } from '../../components/templates'
 import { Button } from '../../components/Button'
 import { Card } from '../../components/Card'
+import Router from 'next/router'
 
 export const Dashboard  = () => {
 
@@ -38,19 +39,24 @@ export const Dashboard  = () => {
     },
   ]
 
+  const handleNavigateAdd = () => {
+    Router.push('/dashboard/add');
+
+  }
+
   return (
     <TemplateContainer>
       <header className='w-full max-w-screen-lg flex justify-between h-1/6 imtes-center py-4 '>
         <span className='font-bold text-indigo-700 text-2xl'>Expense Tracker</span>
 
         <nav className='flex  gap-4'>
-          <Button>Adicionar Conta</Button>
+          <Button onClick={() => handleNavigateAdd()}>Adicionar Despesa</Button>
           <Button variant='ghost'>Sair</Button>
         </nav>
       </header>
 
       <main className='w-full max-w-screen-lg h-auto mb-16 bg-indigo-100 grid grid-cols-3 gap-4 rounded-md p-4 content-start'>
-        
+
         {mock.map(item => 
 
           <Card id={item.id} title={item.title} category={item.category} price={item.price} />
