@@ -20,8 +20,9 @@ export const Button = ({ children, variant, ...props }: Props) => {
   )
 }
 
+
 export const BaseButton = tw.button`
-  h-10 rounded-md w-full text-white font-semibold px-8 text-lg  disabled:bg-gray-400 disabled:cursor-not-allowed
+  h-10 rounded-md text-white font-semibold px-4 text-lg  disabled:bg-gray-400 disabled:cursor-not-allowed w-auto 
 `;
 
 export const MainButton = tw(BaseButton)`
@@ -29,5 +30,5 @@ export const MainButton = tw(BaseButton)`
 `;
 
 export const GhostButton = tw(BaseButton)`
-  bg-transparent border-2 border-indigo-700 text-indigo-700 hover:bg-indigo-200
+  bg-transparent text-indigo-700 hover:bg-indigo-200
 `;
