@@ -9,15 +9,20 @@ interface Props {
 
 export const Card = ({ id, title, category, price }: Props) => {
   return (
-    <article className='bg-gray-100 p-4 rounded-md shadow-md h-48 relative flex flex-col gap-4'>
+    <article className='bg-gray-100 px-4 py-2 rounded-md shadow-md h-auto relative flex flex-col gap-4'>
 
-      <Button variant='ghost' className='absolute top-0 right-0'>X</Button>
+      
 
       <h2 className='font-bold text-xl text-indigo-700'>{title}</h2>
 
       <p className='px-4 font-semibold bg-green-200 self-start rounded-md'>{category}</p>
 
-      <p>R$ {price}</p>
+      <p className="font-semibold">R$ {price}</p>
+
+      <footer className="flex justify-around items-center border-t border-indigo-600 py-2">
+      <Button>Editar</Button>
+      <Button >Excluir</Button>
+      </footer>
 
   </article>
   )
